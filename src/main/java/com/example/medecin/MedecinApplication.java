@@ -1,13 +1,11 @@
-package com.example.patient;
+package com.example.gestionmedecin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PatientApplication {
-
+public class MedecinApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PatientApplication.class, args);
+        SpringApplication.run(MedecinApplication.class, args);
     }
-
 }
