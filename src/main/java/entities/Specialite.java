@@ -1,9 +1,10 @@
-package com.cabinet.medical.entities;
+package com.gestionmedecin.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Data
@@ -21,5 +22,7 @@ public class Specialite {
 
     @Column(length = 500)
     private String description;
-}
 
+    @OneToMany(mappedBy = "specialite", cascade = CascadeType.ALL, orphanRemoval = false)
+    private List<Medecin> medecins;
+}
