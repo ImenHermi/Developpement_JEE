@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="m-0">Médecins <small class="text-muted">({{ count() }})</small></h2>
+  <a class="btn btn-primary" routerLink="/medecins/create">+ Nouveau</a>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Spécialité</th>
+      <th>Email</th>
+      <th style="width:180px">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of medecins(); let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ m.nom }}</td>
+      <td>{{ m.specialite }}</td>
+      <td>{{ m.email }}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-secondary me-2" (click)="edit(m)">Modifier</button>
+        <button class="btn btn-sm btn-outline-danger" (click)="remove(m)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

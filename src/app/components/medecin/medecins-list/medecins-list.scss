@@ -1,0 +1,17 @@
+.header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 14px;
+  h2 { margin: 0; font-weight: 700; }
+  .count { color: #6b7280; margin-left: .5rem; }
+}
+.table-wrap {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+.table { margin: 0; }
+.table thead th { background:#f3f4f6; color:#374151; font-weight:600; }
+.actions { display: flex; gap: 8px; }
+.badge-empty {
+  display:inline-block; padding:8px 12px; background:#fff; border:1px dashed #cbd5e1;
+  border-radius:10px; color:#6b7280;
+}

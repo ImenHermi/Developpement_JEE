@@ -1,0 +1,5 @@
+.app-shell { min-height:100dvh; display:grid; grid-template-rows:auto 1fr auto; }
+.app-nav { background:#fff; border-bottom:1px solid #e5e7eb; }
+.brand { font-weight:700; color:#2563eb; text-decoration:none; }
+.app-main { padding:24px 0; }
+.app-footer { color:#6b7280; font-size:.9rem; padding:16px 0 32px; border-top:1px solid #e5e7eb; margin-top:32px; }
