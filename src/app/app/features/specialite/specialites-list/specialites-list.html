@@ -1,0 +1,65 @@
+<div class="page">
+
+  <!-- En-tête de page (sans H1 global) -->
+  <div class="page-header">
+    <h2>Liste des spécialités</h2>
+
+  </div>
+
+  <!-- Recherche -->
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="🔍 Rechercher par nom..."
+      [ngModel]="q()"
+      (ngModelChange)="q.set($event)"
+    />
+  </div>
+
+  <!-- États -->
+  <div *ngIf="loading()" class="info">⏳ Chargement...</div>
+  <div *ngIf="error() as err" class="error">❌ {{ err }}</div>
+
+  <!-- Tableau -->
+  <table *ngIf="!loading() && !error() && filtered().length > 0" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Statut</th>
+        <th class="center">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let s of filtered()">
+        <td>#{{ s.id }}</td>
+
+        <td>
+          <a [routerLink]="['/specialites', s.id]">
+            {{ s.nom }}
+          </a>
+        </td>
+
+        <td>{{ s.description || '—' }}</td>
+
+        <td>
+          <span [class.active]="s.actif" [class.inactive]="!s.actif">
+            {{ s.actif ? 'Actif' : 'Inactif' }}
+          </span>
+        </td>
+
+        <td class="center">
+          <a [routerLink]="['/specialites', s.id, 'edit']">✏️</a>
+          <button (click)="delete(s.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading() && filtered().length === 0" class="empty">
+    Aucune spécialité trouvée.
+  </div>
+
+</div>

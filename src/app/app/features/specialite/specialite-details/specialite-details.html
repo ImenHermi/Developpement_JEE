@@ -1,0 +1,13 @@
+<div *ngIf="!s()">Chargement…</div>
+
+<div *ngIf="s() as sp" class="card">
+  <h2>{{ sp.nom }}</h2>
+
+  <p><strong>Code :</strong> {{ sp.code || '—' }}</p>
+  <p><strong>Description :</strong> {{ sp.description || '—' }}</p>
+  <p><strong>Actif :</strong> {{ sp.actif ? 'Oui' : 'Non' }}</p>
+
+  <a [routerLink]="['/specialites', sp.id, 'edit']">Modifier</a>
+  <br />
+  <a routerLink="/specialites">← Retour</a>
+</div>

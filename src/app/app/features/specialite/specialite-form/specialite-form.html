@@ -1,0 +1,81 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="card shadow p-4 mx-auto"
+  style="max-width: 600px"
+>
+  <h2 class="mb-4 text-center">
+    {{ id ? '✏️ Modifier la spécialité' : '➕ Ajouter une spécialité' }}
+  </h2>
+
+  <!-- ID -->
+  <div class="mb-3">
+    <label for="id" class="form-label">ID</label>
+    <input
+      id="id"
+      type="text"
+      class="form-control"
+      formControlName="code"
+      placeholder="ID (auto)"
+    />
+  </div>
+
+  <!-- Nom -->
+  <div class="mb-3">
+    <label for="nom" class="form-label">
+      Nom <span class="text-danger">*</span>
+    </label>
+    <input
+      id="nom"
+      type="text"
+      class="form-control"
+      formControlName="nom"
+      placeholder="Cardiologie"
+    />
+
+    <div
+      class="text-danger mt-1"
+      *ngIf="form.get('nom')?.touched && form.get('nom')?.invalid"
+    >
+      Le nom est obligatoire (minimum 2 caractères).
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      id="description"
+      class="form-control"
+      formControlName="description"
+      rows="3"
+      placeholder="Spécialité médicale liée au cœur..."
+    ></textarea>
+  </div>
+
+  <!-- Actif -->
+  <div class="form-check mb-4">
+    <input
+      id="actif"
+      type="checkbox"
+      class="form-check-input"
+      formControlName="actif"
+    />
+    <label for="actif" class="form-check-label">Actif</label>
+  </div>
+
+  <!-- Actions -->
+  <div class="d-flex justify-content-between">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="form.invalid"
+    >
+      {{ id ? 'Mettre à jour' : 'Enregistrer' }}
+    </button>
+
+    <a routerLink="/specialites" class="btn btn-outline-secondary">
+      Annuler
+    </a>
+  </div>
+</form>
