@@ -1,0 +1,71 @@
+/* Carte principale */
+.card {
+  border-radius: 14px;
+}
+
+/* En-tête */
+.card-header {
+  border-radius: 14px 14px 0 0;
+}
+
+/* Tableau */
+.table th {
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Ligne en édition */
+.table-warning {
+  --bs-table-bg: rgba(255, 193, 7, 0.15);
+}
+
+/* Badges statut */
+.badge {
+  padding: 0.45em 0.75em;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* Boutons */
+.btn-sm {
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-warning:hover {
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+}
+
+.btn-success:hover {
+  box-shadow: 0 6px 15px rgba(25, 135, 84, 0.35);
+}
+
+/* Bloc édition */
+.card.border-warning {
+  border-width: 2px;
+}
+
+/* Inputs édition */
+input.form-control,
+select.form-select {
+  border-radius: 10px;
+}
+
+/* Focus champs */
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+/* Icônes */
+i {
+  vertical-align: middle;
+}

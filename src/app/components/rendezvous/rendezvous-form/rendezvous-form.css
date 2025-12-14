@@ -1,0 +1,45 @@
+/* Carte principale */
+.card {
+    border-radius: 14px;
+}
+
+/* En-tête */
+.card-header {
+    border-radius: 14px 14px 0 0;
+}
+
+/* Labels */
+.form-label {
+    letter-spacing: 0.3px;
+}
+
+/* Champs de formulaire */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Focus sur les champs */
+.form-control:focus,
+.form-select:focus {
+    border-color: #198754; /* vert Bootstrap */
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Bouton */
+.btn-success {
+    border-radius: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Effet hover bouton */
+.btn-success:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.3);
+}
+
+/* Icônes */
+i {
+    vertical-align: middle;
+}

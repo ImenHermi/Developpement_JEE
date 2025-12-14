@@ -1,0 +1,110 @@
+<!-- Formulaire d'ajout de rendez-vous -->
+<div class="card shadow-lg border-0 rounded-4 mb-5">
+
+  <!-- Header -->
+  <div class="card-header bg-success bg-opacity-10 border-0 rounded-top-4">
+    <h4 class="mb-0 fw-bold text-success d-flex align-items-center">
+      <i class="bi bi-calendar-plus-fill fs-4 me-2"></i>
+      Nouveau rendez-vous
+    </h4>
+    <small class="text-muted">
+      Remplissez les informations ci-dessous
+    </small>
+  </div>
+
+  <!-- Body -->
+  <div class="card-body p-4">
+
+    <form
+      (ngSubmit)="ajouterRendezVous()"
+      #form="ngForm"
+      class="row g-4">
+
+      <!-- Date -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">
+          <i class="bi bi-calendar-event me-1 text-success"></i>
+          Date et heure du rendez-vous
+        </label>
+        <input
+          type="datetime-local"
+          class="form-control form-control-lg"
+          [(ngModel)]="date"
+          name="date"
+          required>
+      </div>
+
+      <!-- Statut -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">
+          <i class="bi bi-info-circle me-1 text-success"></i>
+          Statut
+        </label>
+        <select
+          class="form-select form-select-lg"
+          [(ngModel)]="statut"
+          name="statut"
+          required>
+          <option value="" disabled>Choisir un statut</option>
+          <option value="prévu">Prévu</option>
+          <option value="annulé">Annulé</option>
+          <option value="terminé">Terminé</option>
+        </select>
+      </div>
+
+      <!-- Patient -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">
+          <i class="bi bi-person me-1 text-success"></i>
+          ID du patient
+        </label>
+        <input
+          type="number"
+          class="form-control form-control-lg"
+          [(ngModel)]="patientId"
+          name="patientId"
+          placeholder="Ex : 1"
+          min="1"
+          required>
+      </div>
+
+      <!-- Médecin -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">
+          <i class="bi bi-person-badge me-1 text-success"></i>
+          ID du médecin
+        </label>
+        <input
+          type="number"
+          class="form-control form-control-lg"
+          [(ngModel)]="medecinId"
+          name="medecinId"
+          placeholder="Ex : 2"
+          min="1"
+          required>
+      </div>
+
+      <!-- Actions -->
+      <div class="col-12 d-flex justify-content-end gap-3 pt-3">
+
+        <button
+          type="reset"
+          class="btn btn-outline-secondary btn-lg px-4">
+          <i class="bi bi-x-circle me-2"></i>
+          Réinitialiser
+        </button>
+
+        <button
+          type="submit"
+          class="btn btn-success btn-lg px-5 d-flex align-items-center"
+          [disabled]="form.invalid">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          Ajouter
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>
